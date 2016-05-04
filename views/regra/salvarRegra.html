@@ -1,0 +1,23 @@
+<div class="row">
+
+  <form class="" name="form.formRegra" novalidate>
+    <div class="form-group col-md-4" ng-class="{error:form.formRegra.posicao.$invalid && !form.formRegra.posicao.$pristine}">
+      <input type="number" class="form-control" name="posicao" placeholder="Posição" ng-model="vm.regra.posicao" required="true">
+      <span ng-show="form.formRegra.posicao.$error.required && !form.formRegra.posicao.$pristine">Item obrigatório</span>
+    </div>
+    <div class="form-group col-md-4" ng-class="{error:form.formRegra.taxa.$invalid && !form.formRegra.taxa.$pristine}">
+      <input type="text" class="form-control" name="taxa" placeholder="Valor da Taxa" ng-model="vm.regra.taxa" required="true">
+      <span ng-show="form.formRegra.taxa.$error.required && !form.formRegra.taxa.$pristine">Item obrigatório</span>
+    </div>
+    <div class="form-group col-md-4" ng-hide="vm.editarAtivado">
+      <button type="button" class="btn btn-success btn-block" ng-disabled="form.formRegra.$invalid" ng-click="vm.salvarRegra(vm.regra)" >Salvar</button>
+    </div>
+    <div class="form-group col-md-2"  ng-show="vm.editarAtivado">
+      <button type="button" class="btn btn-warning btn-block" ng-disabled="form.formRegra.$invalid" ng-click="vm.editarRegra(vm.regra)">Editar</button>
+    </div>
+    <div class="form-group col-md-2" ng-show="vm.editarAtivado">
+      <button type="button" class="btn btn-danger btn-block" ng-click="vm.cancelarEditar(vm.regra)" >Cancelar</button>
+    </div>
+  </form>
+
+</div>
