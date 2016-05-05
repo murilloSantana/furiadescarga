@@ -9,6 +9,6 @@ app.config(function($stateProvider,$urlRouterProvider,BackandProvider,$httpProvi
 
   $stateProvider.state("login",{url:"/login",templateUrl:"views/login.html",controller:"loginCtrl"})
   .state("jogador",{url:"/jogador",templateUrl:"views/jogador/jogador.html",controller:"jogadorCtrl",controllerAs:"vm"})
-  .state("rodada",{url:"/rodada",templateUrl:"views/rodada/rodada.html",controller:"rodadaCtrl"})
+  .state("rodada",{url:"/rodada",templateUrl:"views/rodada/rodada.html",controller:"rodadaCtrl",controllerAs:"vm"})
   .state("regra",{url:"/regra",templateUrl:"views/regra/regra.html",controller:"regraCtrl",controllerAs:"vm"});
 });

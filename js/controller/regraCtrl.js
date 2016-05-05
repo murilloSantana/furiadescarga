@@ -12,6 +12,11 @@
     vm.regras = {};
 
     function listarRegra(){
+      regraAPI.teste().then(function(response) {
+        console.log(response)
+      },function(response) {
+        console.log(response)
+      })
       regraAPI.listarRegra().then(function(response){
         vm.regras = response.data.data;
       },function(response){

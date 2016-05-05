@@ -15,6 +15,7 @@
 
 
     function listarTodosJogadores(){
+    
       jogadorAPI.listar().then(function(response){
         vm.jogadores = response.data.data;
       },function(){
