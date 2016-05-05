@@ -1,0 +1,27 @@
+<div class="row">
+
+
+  <form class="" name="form.formJogador" novalidate>
+
+    <div class="form-group col-md-4" ng-class="{error:form.formJogador.nomeJogador.$error.required && !form.formJogador.nomeJogador.$pristine}">
+      <input type="text"  class="form-control" placeholder="Nome do Jogador" ng-model="vm.jogador.nome_jogador" name="nomeJogador" required="true">
+      <span class="help-block" ng-show="form.formJogador.nomeJogador.$error.required && !form.formJogador.nomeJogador.$pristine">Nome do jogador é obrigatório</span>
+
+    </div>
+    <div class="form-group col-md-4" ng-class="{error:form.formJogador.nomeTime.$error.required && !form.formJogador.nomeTime.$pristine}">
+      <input type="text" class="form-control" placeholder="Nome do Time" ng-model="vm.jogador.nome_time" name="nomeTime" required="true">
+      <span class="help-block"  ng-show="form.formJogador.nomeTime.$error.required && !form.formJogador.nomeTime.$pristine">Nome do time é obrigatório</span>
+
+    </div>
+    <div class="form-group col-md-4" ng-if="!vm.editarAtivado">
+      <button type="button" class="btn btn-success btn-block" ng-click="vm.salvarJogador(vm.jogador)" ng-disabled="form.formJogador.$invalid">Salvar</button>
+    </div>
+    <div class="form-group col-md-2"  ng-if="vm.editarAtivado">
+      <button type="button" class="btn btn-warning btn-block" ng-click="vm.editarJogador(vm.jogador)" ng-disabled="form.formJogador.$invalid">Salvar</button>
+    </div>
+    <div class="form-group col-md-2"  ng-if="vm.editarAtivado">
+      <button type="button" class="btn btn-danger btn-block" ng-click="vm.cancelarEditar()">Cancelar</button>
+    </div>
+  </form>
+
+</div>
