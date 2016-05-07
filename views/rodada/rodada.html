@@ -2,21 +2,28 @@
 
 <div class="col-md-9 main" id="rodada-main">
 
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3>Rodadas</h3>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3>Rodadas</h3>
+    </div>
+
+    <div class="panel-body">
+
+      <div class="row">
+
+      <button type="button" class="btn btn-info" ng-click="vm.abrirModal('lg')">Nova Rodada <i class="glyphicon glyphicon-plus"></i></button>
+
+      <div class="col-md-2 pull-right">
+        <select  class="" name="">
+          <option value="">Selecione uma rodada</option>
+        </select>
+      </div>
+      </div>
+
+      <ng-include src="'/furiaDescarga/views/rodada/listaRodada.html'"></ng-include>
+
+    </div>
   </div>
-
-  <div class="panel-body">
-
-
-    <button type="button" class="btn btn-info" ng-click="vm.abrirModal('lg')">Nova Rodada <i class="glyphicon glyphicon-plus"></i></button>
-
-
-
-
-  </div>
-</div>
 
 
 </div>
