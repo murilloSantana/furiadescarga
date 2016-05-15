@@ -1,23 +1,35 @@
 <div class="row">
-  <div class="col-md-12 table-responsive">
+  <div class="col-md-12 table-responsive" >
 
-    <table class="table-hover table-striped">
+    <table class="table table-hover table-striped table-condensed table-bordered">
       <thead>
         <tr>
+          <th></th>
           <th>Posição</th>
           <th>Nome do Time</th>
           <th>Nome do Jogador</th>
-          <th></th>
+          <th>Taxa</th>
 
         </tr>
       </thead>
 
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr ng-repeat="rodada in vm.rodadas" ng-class="{status:rodada.pagamento}" >
+
+          <td ng-show="rodada.pagamento"></td>
+
+          <td class="alinhamento-tabela" ng-show="!rodada.pagamento">
+            <div class="form-group">
+              <input type="checkbox" ng-click="vm.alterarStatusPagamento(rodada)">
+            </div>
+          </td>
+
+          <td>{{rodada.posicao}}</td>
+          <td>{{rodada.nome_time}}</td>
+          <td>{{rodada.nome_jogador}}</td>
+          <td>{{rodada.debito}}</td>
+
+
         </tr>
       </tbody>
     </table>

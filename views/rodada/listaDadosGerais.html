@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-12 table-responsive" >
+
+    <table class="table table-hover table-striped table-condensed table-bordered">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Nome do Time</th>
+          <th>Nome do Jogador</th>
+          <th>Total a ser Pago</th>
+          <th>Total de Taxas Geradas</th>
+
+        </tr>
+      </thead>
+
+      <tbody >
+        <tr ng-repeat="dados in vm.dadosGerais"  ng-class="{status:dados.pagamento}">
+
+          <td ng-hide="dados.total_debito > 0"></td>
+          <td ng-show="dados.total_debito > 0" class="alinhamento-tabela">
+            <div class="form-group">
+              <input type="checkbox" ng-click="vm.atualizarPagamentos(dados.id)">
+            </div>
+          </td>
+
+          <td>{{dados.nome_time}}</td>
+          <td>{{dados.nome_jogador}}</td>
+          <td>{{dados.total_devido}}</td>
+          <td >{{dados.total}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

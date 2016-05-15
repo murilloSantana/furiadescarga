@@ -15,15 +15,13 @@
         <li>
           <div class="col-xs-12 col-md-12 menu-user">
             <figure>
-              <div class="btn-group">
-                <a  class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="btn-group" ng-controller="loginCtrl">
+                <a  class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                   <img src="images/people.png" alt="menu do usuario" class="img-circle " id="img-user">
-                  <figcaption>Murillo Costa</figcaption>
+                  <figcaption>Usuário</figcaption>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Murillo</a></li>
-                  <li><a href="#">Murillo</a></li>
-                  <li><a href="#">Murillo</a></li>
+                  <li><a href="" ng-click="logout()">Logout</a></li>
 
                 </ul>
               </div>

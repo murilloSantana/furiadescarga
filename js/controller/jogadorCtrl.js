@@ -5,7 +5,7 @@
 
 
   function jogadorCtrl($scope,jogadorAPI,$timeout,userAPI,Backand){
-
+  
     var vm = this;
     vm.editarAtivado = false;
     vm.erroJogador = false;
@@ -15,7 +15,7 @@
 
 
     function listarTodosJogadores(){
-    
+
       jogadorAPI.listar().then(function(response){
         vm.jogadores = response.data.data;
       },function(){
@@ -30,7 +30,7 @@
           var dataCreate = new Date();
           jogador["data_created"] = dataCreate.toUTCString();
           jogador["users"] = id;
-
+          console.log(jogador)
           jogadorAPI.salvarJogador(jogador).then(function(response) {
 
             vm.jogador={};

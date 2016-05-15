@@ -6,17 +6,6 @@
   function regraAPI($http,Backand){
 
 
-    var _teste = function(){
-      return $http ({
-        method: 'GET',
-        url: Backand.getApiUrl() + '/1/query/data/teste2',
-        params: {
-          parameters: {
-            queryteste: 'flamengo'
-          }
-        }
-      });
-    };
     var _listarRegra = function(){
     return $http({
       method : 'GET',
@@ -53,7 +42,6 @@
     salvarRegra:_salvarRegra,
     editarRegra:_editarRegra,
     excluirRegra:_excluirRegra,
-    teste:_teste
   }
 };
 

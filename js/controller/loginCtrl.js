@@ -12,10 +12,12 @@
     $scope.login = function(usuario){
       userAPI.login(usuario);
     }
-
+    $scope.logout = function() {
+      userAPI.logout();
+    };
 
   };
 
 
 
-})()
+})();

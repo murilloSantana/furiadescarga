@@ -1,0 +1,35 @@
+<div class="col-md-9 main" id="rodada-main">
+  <div class="row">
+
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3>Rodadas</h3>
+      </div>
+
+      <div class="panel-body">
+
+        <div class="row">
+          <div class="col-md-2 form-group">
+            <button type="button" class="btn btn-info" ng-click="vm.abrirModal('lg')">Nova Rodada <i class="glyphicon glyphicon-plus"></i></button>
+
+          </div>
+          <div class="col-md-2 form-group">
+            <button type="button" class="btn btn-danger" ng-show="!vm.mostrarDadosGerais" ng-click="vm.excluirRodada(vm.rodadaSelecionada)">Excluir Rodada <i class="glyphicon glyphicon-trash"></i></button>
+          </div>
+          <div class="col-md-3 pull-right form-group">
+            <select  class="form-control" name="" ng-model="vm.rodadaSelecionada"  ng-options="lr.numero for lr in vm.listaRodadas" ng-change="vm.atualizarTabelaRodada(vm.rodadaSelecionada);vm.listarDadosGerais()" >
+              <option value="">Selecione uma rodada</option>
+            </select>
+
+          </div>
+        </div>
+
+        <ng-include src="'/furiadescarga/views/rodada/listaRodada.html'" ng-hide="vm.mostrarDadosGerais"></ng-include>
+        <ng-include src="'/furiadescarga/views/rodada/listaDadosGerais.html'" ng-show="vm.mostrarDadosGerais"></ng-include>
+
+      </div>
+    </div>
+
+  </div>
+</div>

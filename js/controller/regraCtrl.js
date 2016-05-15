@@ -11,12 +11,9 @@
     vm.regra = {};
     vm.regras = {};
 
+
+
     function listarRegra(){
-      regraAPI.teste().then(function(response) {
-        console.log(response)
-      },function(response) {
-        console.log(response)
-      })
       regraAPI.listarRegra().then(function(response){
         vm.regras = response.data.data;
       },function(response){
@@ -25,6 +22,9 @@
     };
 
     vm.salvarRegra = function(regra){
+
+      regra.taxa = regra.taxa.replace(",",".");
+
       Backand.getUserDetails().then(function(response) {
         var user = response;
         userAPI.buscarUser(user.username).then(function(response) {
@@ -54,6 +54,8 @@
     };
 
     vm.editarRegra = function(regra) {
+      regra.taxa = regra.taxa.replace(",",".");
+
       regraAPI.editarRegra(regra).success(function(response){
         vm.regra = {};
         $scope.form.formRegra.$setPristine();

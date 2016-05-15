@@ -102,6 +102,15 @@ body{
 	font-size: 18px;
 }
 
+
+
+.status td{
+	background-color: #C5FFB8;
+}
+
+.alinhamento-tabela {
+	text-align: center;
+}
 .modal-body{
 	height: 50%;
 	overflow-y: auto;
@@ -190,6 +199,7 @@ body{
 @media (max-width: 767px) {
 	.menu{
 		height: auto;
+		width: 100%;
 	}
 	.menu button{
 		background-color: #ffffff;

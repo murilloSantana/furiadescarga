@@ -19,15 +19,21 @@
         method:'GET',
         url: Backand.getApiUrl() + "/1/objects/users",
         params: {
-         filter: [{fieldName:"email", operator:"equals", value: username}],
-       }
+          filter: [{fieldName:"email", operator:"equals", value: username}],
+        }
       })
     };
-
+    var _logout = function() {
+      Backand.signout().then(function () {
+        //angular.copy({}, self.currentUser);
+        $location.path("/login");
+      });
+    };
 
     return {
       login: _login,
-      buscarUser:_buscarUser
+      buscarUser:_buscarUser,
+      logout:_logout
     }
   };
 

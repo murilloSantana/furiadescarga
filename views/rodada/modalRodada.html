@@ -25,24 +25,24 @@
             <tr>
               <th>Posição</th>
               <th>Nome do Time</th>
-              <th>Débito</th>
+              <th>Valor a ser pago</th>
 
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="jog in vm.listaJogadores">
-              <td ng-init="vm.rodada.posicao = $index+1">{{$index+1}}</td>
+              <td>{{$index+1}}</td>
 
               <td>
                 <div class="form-group">
-                  <select class="form-control" ng-model="vm.rodada.jogador" ng-options="lj.nome_time for lj in vm.listaJogadores" ng-change="vm.atualizarLista(vm.rodada)">
+                  <select id="selectJogador" class="form-control" ng-model="vm.listaDadosRodada[$index]" ng-options="lj.nome_time for lj in vm.listaJogadores" >
                     <option value="">Selecione um Time</option>
                   </select>
                 </div>
               </td>
 
               <td >
-                {{jog.regras.taxa}}
+                {{vm.regras[$index].taxa}}
 
               </td>
 
@@ -56,7 +56,7 @@
 
 </div>
 <div class="modal-footer">
-  <button class="btn btn-success" type="button" ng-click="vm.salvarRodada(rod.numero)">Gerar Rodada</button>
+  <button class="btn btn-success" type="button" ng-click="vm.salvarRodada(vm.rod.numero)">Gerar Rodada <img ng-show="vm.salvando" src="images/loading_salvamento.gif" alt="" /></button>
   <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
 
 </div>
